@@ -36,9 +36,6 @@ Try {
     Write-Host "Windows Update module executed successfully"
     Remove-Item -Path $PSWindowsUpdatePath -Recurse -Force -ErrorAction SilentlyContinue
     Remove-Item -Path $PSWindowsUpdateFile -Force -ErrorAction SilentlyContinue
-    Start-Process -FilePath "$($Env:SystemRoot)\System32\USOClient.exe" -ArgumentList "ScanInstallWait" -Wait
-    Start-Process -FilePath "$($Env:SystemRoot)\System32\USOClient.exe" -ArgumentList "StartInstall" -Wait
-    Start-Process -FilePath "$($Env:SystemRoot)\System32\USOClient.exe" -ArgumentList "StartInteractiveScan"
     Exit 0
 } Catch {
     Write-Host $_
