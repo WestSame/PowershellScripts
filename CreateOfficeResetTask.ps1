@@ -1,3 +1,9 @@
+<#
+Powershell script to reset Office products logins
+
+Sampo Seppänen 2020
+#>
+
 Param(       
     [Parameter(Mandatory=$true)]  
     [String]$ActivateTime,
