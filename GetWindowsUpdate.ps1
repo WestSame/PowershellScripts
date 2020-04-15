@@ -1,4 +1,13 @@
-﻿$ScriptPath = Split-Path -Parent $MyInvocation.MyCommand.Definition
+<#
+Powershell script to check Windows updates
+
+Using PSWindowsUpdate module by Michal Gajda
+https://www.powershellgallery.com/packages/PSWindowsUpdate
+
+Sampo Seppänen 2020
+#>
+
+$ScriptPath = Split-Path -Parent $MyInvocation.MyCommand.Definition
 
 $PSWindowsUpdateUri = "https://psg-prod-eastus.azureedge.net/packages/pswindowsupdate.2.1.1.2.nupkg"
 $PSWindowsUpdateFile = "$($ScriptPath)\PSWindowsUpdate.zip"
