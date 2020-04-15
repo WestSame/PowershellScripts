@@ -369,8 +369,8 @@ If (!(Get-ScheduledTask -TaskName "Microsoft Office Reset" -ErrorAction Silently
     $Action = New-ScheduledTaskAction -Execute "powershell" -Argument "-noninteractive -executionpolicy bypass -windowstyle hidden -file ""$env:SystemRoot\OfficeResetTask.ps1"""
     $Trigger = @(
         $(New-ScheduledTaskTrigger -AtLogOn),
-        $(New-CimInstance -CimClass $StateChangeTrigger -Property @{StateChange = 1} -ClientOnly),
-        $(New-CimInstance -CimClass $StateChangeTrigger -Property @{StateChange = 8} -ClientOnly)
+        $(New-CimInstance -CimClass $(StateChangeTrigger) -Property @{StateChange = 1} -ClientOnly),
+        $(New-CimInstance -CimClass $(StateChangeTrigger) -Property @{StateChange = 8} -ClientOnly)
     )
     $Trigger.StartBoundary = $ActivateTime
     $Trigger.EndBoundary = $ExpireTime
