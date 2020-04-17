@@ -1,4 +1,10 @@
-﻿Try {
+<#
+Upgrade Windows 10 version using Windows Update Assistant and remove it after restart
+
+Sampo Seppänen 2020
+#>
+
+Try {
     $TempDir = "C:\_Windows_FU"
     New-Item -Path $TempDir -ItemType Directory -Force -ErrorAction SilentlyContinue
 
